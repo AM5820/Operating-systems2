@@ -73,15 +73,25 @@ namespace app1
             for (int i = 0; i < dataset.Length; i++)
             {
                 if (dataset[i] >= 1 && dataset[i] <= 14)
+                {
                     child++;
+                }
                 else if (dataset[i] >= 15 && dataset[i] <= 20)
+                {
                     teen++;
+                }
                 else if (dataset[i] >= 21 && dataset[i] <= 35)
+                {
                     youth++;
+                }
                 else if (dataset[i] >= 36 && dataset[i] <= 50)
+                {
                     man++;
+                }
                 else if (dataset[i] >= 51 && dataset[i] <= 100)
+                {
                     oldman++;
+                }
             }
             
             double child_prob = (double)child / dataset.Length;
@@ -90,25 +100,58 @@ namespace app1
             double man_prob = (double)man / dataset.Length;
             double oldman_prob = (double)oldman / dataset.Length;
 
+
             Console.WriteLine("prob. distribution = > child\t\t teen\t\t youth\t\t man\t\t oldman\n" + "\t\t\t "+child_prob+"\t "+teen_prob+"\t "+youth_prob+"\t "+man_prob+"\t "+oldman_prob);
             Console.WriteLine("\t\t\t" + child_prob*100 + "%\t " + teen_prob*100 + "%\t " + youth_prob*100 + "%\t " + man_prob*100 + "%\t " + oldman_prob*100+"%");
 
         }
-        static void variance(int[] dataset)
+        static void category_mean(int[] dataset)
         {
-            int sum = 0;
-            double x_sum = 0;
-            int average = 0;
+
+            int child = 0, teen = 0, youth = 0, man = 0, oldman = 0;       //child => [1,14] , teen => [15,20] , youth => [21,35] , man=>[36,50] , old=>[51,100]
+            int child_sum = 0, teen_sum = 0, youth_sum = 0, man_sum = 0, oldman_sum = 0;
+
             for (int i = 0; i < dataset.Length; i++)
             {
-                sum += dataset[i];
+                if (dataset[i] >= 1 && dataset[i] <= 14)
+                {
+                    child++;
+                    child_sum += dataset[i];
+                }
+                else if (dataset[i] >= 15 && dataset[i] <= 20)
+                {
+                    teen++;
+                    teen_sum += dataset[i];
+                }
+                else if (dataset[i] >= 21 && dataset[i] <= 35)
+                {
+                    youth++;
+                    youth_sum += dataset[i];
+                }
+                else if (dataset[i] >= 36 && dataset[i] <= 50)
+                {
+                    man++;
+                    man_sum += dataset[i];
+                }
+                else if (dataset[i] >= 51 && dataset[i] <= 100)
+                {
+                    oldman++;
+                    oldman_sum += dataset[i];
+                }
             }
-            average = sum / dataset.Length;
-            for (int i = 0; i < dataset.Length; i++)
-            {
-                x_sum += Math.Pow(dataset[i] - average ,2);
-            }
-            Console.WriteLine("variance = " + x_sum/dataset.Length);
+
+
+            double child_mean = child_sum / child;
+            double teen_mean = teen_sum / teen;
+            double youth_mean = youth_sum / youth;
+            double man_mean = man_sum / man;
+            double oldman_mean = oldman_sum / oldman;
+
+
+            double catmean = (child_mean + teen_mean + youth_mean + man_mean + oldman_mean) / 5;
+
+
+            Console.WriteLine("categories mean = " + catmean);
         }
 
         public static object BinarySearchIterative(int[] inputArray, int key)
@@ -224,13 +267,14 @@ namespace app1
                 dataset[i] = random.Next(1,100);
             }
 
+            Console.WriteLine("Statistics : \n------------");
 
 
             var watch1 = Stopwatch.StartNew();
             
             mean(dataset);
             categorize(dataset);
-            variance(dataset);
+            category_mean(dataset);
             watch1.Stop();
             
 
@@ -238,14 +282,12 @@ namespace app1
             
             Thread task1 = new Thread(()=>mean(dataset));
             Thread task2 = new Thread(()=>categorize(dataset));
-            Thread task3 = new Thread(() => variance(dataset));
 
             var watch2 = Stopwatch.StartNew();
-            Parallel.Invoke(()=>mean(dataset),()=>categorize(dataset),()=>variance(dataset));
+            Parallel.Invoke(()=>mean(dataset),()=>categorize(dataset),()=>category_mean(dataset));
 
             //task1.Start();
             //task2.Start();
-            //task3.Start();
 
             watch2.Stop();
             
