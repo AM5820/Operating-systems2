@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace app3
 {
@@ -75,10 +76,15 @@ namespace app3
                 int m = l + (r - l) / 2;
 
                 // Sort first and second halves
-                Thread thread = new Thread(new ThreadStart(()=>mergeSort(arr, l, m)));
-                thread.Start();
-                Thread thread2 = new Thread(new ThreadStart(() => mergeSort(arr, m+1, r)));
-                thread2.Start();
+                Task t1 = new Task(() => mergeSort(arr, l, m));
+                t1.Start();
+                Task t2 = new Task(() => mergeSort(arr, m+1, r));
+                t2.Start();
+
+                //Thread thread = new Thread(new ThreadStart(()=>mergeSort(arr, l, m)));
+                //thread.Start();
+                //Thread thread2 = new Thread(new ThreadStart(() => mergeSort(arr, m+1, r)));
+                //thread2.Start();
 
                 merge(arr, l, m, r);
             }
@@ -93,10 +99,9 @@ namespace app3
                 int m = l + (r - l) / 2;
 
                 // Sort first and second halves
-                Thread thread = new Thread(new ThreadStart(() => mergeSort(arr, l, m)));
-                thread.Start();
-                Thread thread2 = new Thread(new ThreadStart(() => mergeSort(arr, m + 1, r)));
-                thread2.Start();
+                mergeSort(arr, l, m);
+                mergeSort(arr, m + 1, r);
+
 
                 merge(arr, l, m, r);
             }
@@ -113,13 +118,8 @@ namespace app3
         static void Main(string[] args)
         {
 
-          
-                
             
-
-
-            
-            int[] arr = new int[100];
+            int[] arr = new int[100000000];
 
             Random random = new Random();
             for (int i = 0; i < arr.Length; i++)
