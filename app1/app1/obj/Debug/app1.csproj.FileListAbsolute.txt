@@ -1,7 +1,0 @@
-D:\FCAI\Level 4\Os2\C#\app1\app1\bin\Debug\app1.exe.config
-D:\FCAI\Level 4\Os2\C#\app1\app1\bin\Debug\app1.exe
-D:\FCAI\Level 4\Os2\C#\app1\app1\bin\Debug\app1.pdb
-D:\FCAI\Level 4\Os2\C#\app1\app1\obj\Debug\app1.csprojAssemblyReference.cache
-D:\FCAI\Level 4\Os2\C#\app1\app1\obj\Debug\app1.csproj.CoreCompileInputs.cache
-D:\FCAI\Level 4\Os2\C#\app1\app1\obj\Debug\app1.exe
-D:\FCAI\Level 4\Os2\C#\app1\app1\obj\Debug\app1.pdb

@@ -14,6 +14,10 @@ namespace app3
 
         static void merge(int[] arr, int l, int m, int r)
         {
+
+            // Merges two subarrays of arr[]. 
+            // First subarray is arr[l..m] 
+            // Second subarray is arr[m+1..r] 
             int i, j, k;
             int n1 = m - l + 1;
             int n2 = r - m;
@@ -73,7 +77,7 @@ namespace app3
             {
                 // Same as (l+r)/2, but avoids overflow for 
                 // large l and h 
-                int m = l + (r - l) / 2;
+                int m = (l+r)/ 2;
 
                 // Sort first and second halves
                 Task t1 = new Task(() => mergeSort(arr, l, m));
@@ -96,11 +100,11 @@ namespace app3
             {
                 // Same as (l+r)/2, but avoids overflow for 
                 // large l and h 
-                int m = l + (r - l) / 2;
+                int m = (l + r) / 2;
 
                 // Sort first and second halves
-                mergeSort(arr, l, m);
-                mergeSort(arr, m + 1, r);
+                mergeSort2(arr, l, m);
+                mergeSort2(arr, m + 1, r);
 
 
                 merge(arr, l, m, r);
@@ -119,7 +123,7 @@ namespace app3
         {
 
             
-            int[] arr = new int[100000000];
+            int[] arr = new int[10000000];
 
             Random random = new Random();
             for (int i = 0; i < arr.Length; i++)
@@ -127,7 +131,7 @@ namespace app3
                 arr[i] = random.Next(1, 10000);
             }
 
-            //int[] arr = { 12, 11, 13, 5, 6, 7 ,20,123,324,34,45,5,67,79,34,666,777,333,23,54,77,798,1020,1232,345,3433,4335,459,887,908,707,303,1024};
+           
             int arr_size = arr.Length;
             
             
@@ -141,8 +145,8 @@ namespace app3
             watch2.Stop();
 
 
-            Console.WriteLine("parallel processing Time = " + watch1.ElapsedMilliseconds + " milliseconds");
-            Console.WriteLine("sequential processing Time = " + watch2.ElapsedMilliseconds + " milliseconds");
+            Console.WriteLine("parallel   processing Time = " + watch1.ElapsedMilliseconds + " milliseconds\t" + Math.Round(watch1.Elapsed.TotalSeconds,1) +" seconds");
+            Console.WriteLine("sequential processing Time = " + watch2.ElapsedMilliseconds + " milliseconds\t" + Math.Round(watch2.Elapsed.TotalSeconds, 1) + " seconds");
             
             Console.ReadKey();
         }
