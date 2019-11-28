@@ -12,7 +12,7 @@ namespace app3
     {
         static int i = 0;
 
-        static void merge(int[] arr, int l, int m, int r)
+        static void mergeparts(int[] arr, int l, int m, int r)
         {
 
             // Merges two subarrays of arr[]. 
@@ -90,7 +90,7 @@ namespace app3
                 //Thread thread2 = new Thread(new ThreadStart(() => mergeSort(arr, m+1, r)));
                 //thread2.Start();
 
-                merge(arr, l, m, r);
+                mergeparts(arr, l, m, r);
             }
         }
 
@@ -107,7 +107,7 @@ namespace app3
                 mergeSort2(arr, m + 1, r);
 
 
-                merge(arr, l, m, r);
+                mergeparts(arr, l, m, r);
             }
         }
 
