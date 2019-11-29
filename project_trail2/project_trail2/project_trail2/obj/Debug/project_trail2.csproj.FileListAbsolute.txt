@@ -1,0 +1,7 @@
+D:\FCAI\Level 4\Os2\C#\project_trail2\project_trail2\project_trail2\bin\Debug\project_trail2.exe.config
+D:\FCAI\Level 4\Os2\C#\project_trail2\project_trail2\project_trail2\bin\Debug\project_trail2.exe
+D:\FCAI\Level 4\Os2\C#\project_trail2\project_trail2\project_trail2\bin\Debug\project_trail2.pdb
+D:\FCAI\Level 4\Os2\C#\project_trail2\project_trail2\project_trail2\obj\Debug\project_trail2.csprojAssemblyReference.cache
+D:\FCAI\Level 4\Os2\C#\project_trail2\project_trail2\project_trail2\obj\Debug\project_trail2.csproj.CoreCompileInputs.cache
+D:\FCAI\Level 4\Os2\C#\project_trail2\project_trail2\project_trail2\obj\Debug\project_trail2.exe
+D:\FCAI\Level 4\Os2\C#\project_trail2\project_trail2\project_trail2\obj\Debug\project_trail2.pdb
