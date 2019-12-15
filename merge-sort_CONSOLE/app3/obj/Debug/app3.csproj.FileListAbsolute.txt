@@ -12,3 +12,10 @@ D:\FCAI\Level 4\Os2\C#\Operating-systems2\parallel merge-sort\app3\obj\Debug\app
 D:\FCAI\Level 4\Os2\C#\Operating-systems2\parallel merge-sort\app3\bin\Debug\app3.exe.config
 D:\FCAI\Level 4\Os2\C#\Operating-systems2\parallel merge-sort\app3\bin\Debug\app3.exe
 D:\FCAI\Level 4\Os2\C#\Operating-systems2\parallel merge-sort\app3\bin\Debug\app3.pdb
+D:\FCAI\Level 4\Os2\C#\Operating-systems2\merge-sort_CONSOLE\app3\bin\Debug\app3.exe.config
+D:\FCAI\Level 4\Os2\C#\Operating-systems2\merge-sort_CONSOLE\app3\bin\Debug\app3.exe
+D:\FCAI\Level 4\Os2\C#\Operating-systems2\merge-sort_CONSOLE\app3\bin\Debug\app3.pdb
+D:\FCAI\Level 4\Os2\C#\Operating-systems2\merge-sort_CONSOLE\app3\obj\Debug\app3.csprojAssemblyReference.cache
+D:\FCAI\Level 4\Os2\C#\Operating-systems2\merge-sort_CONSOLE\app3\obj\Debug\app3.csproj.CoreCompileInputs.cache
+D:\FCAI\Level 4\Os2\C#\Operating-systems2\merge-sort_CONSOLE\app3\obj\Debug\app3.exe
+D:\FCAI\Level 4\Os2\C#\Operating-systems2\merge-sort_CONSOLE\app3\obj\Debug\app3.pdb
